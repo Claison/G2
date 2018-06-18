@@ -12,15 +12,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let produto of produtos">
-            <td>{{produto.codigo}}</td>
-            <td>{{produto.nome}}</td>
-            <td>{{produto.preco}}</td>
-            <td>{{produto.precoT}}</td>
+        <tr *ngFor="let c of produtosCarrinho">
+            <td>{{c.nome}}</td>
+            <td><input type="number" width="10" [(ngModel)]="qtProduto" ></td>
+            <td>{{c.preco}}</td>
+            <td>{{qtProduto * c.preco}}</td>
             <td>
-                <a href="javascript:void(0)" class="btn btn-danger btn-sm" (click)="excluir(produto)">Excluir</a>
+                <a href="javascript:void(0)" class="btn btn-danger btn-sm" (click)="excluir(c)">Excluir</a>
             </td>
         </tbody>
     </table>
 </div>
-<!--<input class="form-control" id="ex1" type="text">-->
+{{produtosCarrinho}}

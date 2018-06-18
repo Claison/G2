@@ -12,12 +12,12 @@
     </div>
     <div class="col-sm-10">
         <div class="row d-flex justify-content-center">
-            <div class="card mx-2 mb-2 text-center" style="width: 18rem;" *ngFor="let produto of produtos">
+            <div class="card mx-2 mb-2 text-center" style="width: 18rem;" *ngFor="let produto of produtosTodos">
                 <img class="card-img-top" src="{{produto.url}}" alt="Card image cap" height="286">
                 <div class="card-body">
                     <h5 class="card-title">{{produto.nome}}</h5>
                     <p class="card-text">{{produto.preco}}</p>
-                    <a href="#" class="btn btn-primary">COMPRAR</a>
+                    <a href="#" class="btn btn-primary" (click)="addCarrinho(p)">COMPRAR</a>
                 </div>
             </div>
         </div>

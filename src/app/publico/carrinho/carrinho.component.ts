@@ -6,10 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent implements OnInit {
+    produtosCarrinho = null;
+    qtProduto = null;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.atualizaProdutosCarrinho();
+    }
 
-}
+    getCarrinho() {
+        const localStorageCarrinho = JSON.parse(localStorage.getItem('produtosCarrinho'));
+        if (localStorageCarrinho == null) {
+            return [];
+        } else {
+            return localStorageCarrinho.produtos;
+        }
+    }
+
+    atualizaProdutosCarrinho() {
+        this.produtosCarrinho = this.getCarrinho();
+    }
+
+    excluir(produto) {
+
+            if (confirm("Realmente deseja excluir a disciplina " + produto.nome + "?")) {
+                this.produtosCarrinho.splice(this.produtosCarrinho.indexOf(produto), 1)
+                localStorage.setItem("pprodutos", JSON.stringify(this.produtosCarrinho));
+
+
+            }
+        }
+    }
+

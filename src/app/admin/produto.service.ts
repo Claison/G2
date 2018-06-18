@@ -20,6 +20,9 @@ export class ProdutoService {
     getCategorias(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL + '/categorias');
     }
+    todosProdutos() {
+        return this.http.get(this.API_URL + '/produtos');
+    }
 
     getProduto(id: number): Observable<any> {
         return this.http.get(this.API_URL + '/produtos/' + id );
