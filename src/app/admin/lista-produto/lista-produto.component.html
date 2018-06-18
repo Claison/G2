@@ -1,0 +1,28 @@
+<a routerLink="/produto/cadastro" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Cadastrar</a>
+<h1>Lista de Produtos</h1>
+<hr>
+<div class="alert alert-success" *ngIf="excluir_ok">
+  <strong>Sucesso!</strong> O produto foi excluída com sucesso.
+</div>
+<div class="alert alert-danger" *ngIf="excluir_erro">
+  <strong>Ops!</strong> Ocorreu um erro ao tentar excluir o produto. Aguarde alguns instantes e tente novamente.
+</div>
+<table class="table table-bordered table-striped table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th width="250">Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let produto of produtos">
+    <td>{{produto.nome}}</td>
+    <td>{{produto.preco}}</td>
+    <td>
+      <a [routerLink]="['/produto/produtoc', produto.id, 'editar']" class="btn btn-secondary btn-sm">Editar</a>
+      <a href="javascript:void(0)" class="btn btn-danger btn-sm" (click)="excluir(produto)">Excluir</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

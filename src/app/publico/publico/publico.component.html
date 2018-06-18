@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <!-- logo -->
+    <a class="navbar-brand">
+        <img src='http://revistacarro.com.br/sitestatic/images/carro_novo.png' height="50" width="120">
+    </a>
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">INICIO  <i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/carrinho" >CARRINHO  <i class="fa fa-cart-arrow-down"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/publico/acessar">ACESSAR  <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/admin">ADMIN</a>
+            </li>
+            <li class="navbar-text">
+                Olá, {{usuario?.nome}}! |
+                <a href="#" (click)="sair()">SAIR</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="page" class="container">
+    <router-outlet></router-outlet>
+</div>
+<hr>
+<footer>
+    <small>Loja Virtual (copyleft) 2018</small>
+</footer>
