@@ -16,8 +16,8 @@
                 <img class="card-img-top" src="{{produto.url}}" alt="Card image cap" height="286">
                 <div class="card-body">
                     <h5 class="card-title">{{produto.nome}}</h5>
-                    <p class="card-text">{{produto.preco}}</p>
-                    <a href="#" class="btn btn-primary" (click)="addCarrinho(p)">COMPRAR</a>
+                    <p class="card-text">R$ {{produto.preco}}</p>
+                    <a href="#" class="btn btn-primary" (click)="addCarrinho(produto)">COMPRAR</a>
                 </div>
             </div>
         </div>

@@ -8,20 +8,13 @@ import {ProdutoService} from "../../admin/produto.service";
 })
 export class ProdutosInicioComponent implements OnInit {
   categorias = []
-  produtosTodos = [];
-  produtos=null;
+  produtosTodos = null;
   produtosCarrinho = [];
   filtroPorCategoria = null;
 
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
-      this.produtoService.todosProdutos()
-          .subscribe(produtos => {
-                  this.produtos = produtos;
-              }, () =>
-                  alert('Erro ao carregar produtos')
-          );
       this.atualizaCarrinho();
       this.atualizarLista();
   }

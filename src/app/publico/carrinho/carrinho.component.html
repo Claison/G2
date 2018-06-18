@@ -15,12 +15,11 @@
         <tr *ngFor="let c of produtosCarrinho">
             <td>{{c.nome}}</td>
             <td><input type="number" width="10" [(ngModel)]="qtProduto" ></td>
-            <td>{{c.preco}}</td>
-            <td>{{qtProduto * c.preco}}</td>
+            <td>R$ {{c.preco}}</td>
+            <td id='number-default'> R$ {{qtProduto * c.preco | number:0}}</td>
             <td>
                 <a href="javascript:void(0)" class="btn btn-danger btn-sm" (click)="excluir(c)">Excluir</a>
             </td>
         </tbody>
     </table>
 </div>
-{{produtosCarrinho}}

@@ -11,19 +11,12 @@ export class ProdutoService {
     constructor(private http: HttpClient) {
     }
 
-    getProdutos(id?: number): Observable<any[]> {
-        if (id){
-            return this.http.get<any[]>(this.API_URL + '/produtos?categoria='+id);
-        }
-        return this.http.get<any[]>(this.API_URL + '/produtos');
+    getProdutos(id?: number) {
+        return this.http.get(this.API_URL + '/produtos');
     }
     getCategorias(): Observable<any[]> {
         return this.http.get<any[]>(this.API_URL + '/categorias');
     }
-    todosProdutos() {
-        return this.http.get(this.API_URL + '/produtos');
-    }
-
     getProduto(id: number): Observable<any> {
         return this.http.get(this.API_URL + '/produtos/' + id );
     }

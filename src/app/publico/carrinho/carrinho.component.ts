@@ -31,9 +31,9 @@ export class CarrinhoComponent implements OnInit {
 
     excluir(produto) {
 
-            if (confirm("Realmente deseja excluir a disciplina " + produto.nome + "?")) {
+            if (confirm("Realmente deseja excluir o produto " + produto.nome + "?")) {
                 this.produtosCarrinho.splice(this.produtosCarrinho.indexOf(produto), 1)
-                localStorage.setItem("pprodutos", JSON.stringify(this.produtosCarrinho));
+                localStorage.setItem("produtosCarrinho", JSON.stringify(this.produtosCarrinho));
 
 
             }

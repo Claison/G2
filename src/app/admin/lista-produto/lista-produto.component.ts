@@ -10,8 +10,7 @@ export class ListaProdutoComponent implements OnInit {
 
     excluir_ok = false;
     excluir_erro = false;
-    produtos = [];
-    categorias=[];
+    produtos = null;
 
     constructor(private produtoService: ProdutoService) {
     }
