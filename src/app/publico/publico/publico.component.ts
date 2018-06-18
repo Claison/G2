@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../shared/auth.service";
 import {Router} from "@angular/router";
+import {UsuarioService} from "../usuario.service";
 
 @Component({
   selector: 'app-publico',
@@ -10,19 +11,19 @@ import {Router} from "@angular/router";
 export class PublicoComponent implements OnInit {
     usuario = null;
 
-    constructor(private authService: AuthService, private router: Router) {
+    constructor(private usuarioService: UsuarioService, private router: Router) {
     }
 
     ngOnInit() {
-        this.usuario = this.authService.get();
+        this.usuario = this.usuarioService.get();
         if (!this.usuario) {
             // this.router.navigate(['']);
         }
     }
 
     sair() {
-        this.authService.logout();
-        this.router.navigate(['/publico/sairS']);
+        this.usuarioService.logout();
+        this.router.navigate(['/publico']);
     }
 
 }

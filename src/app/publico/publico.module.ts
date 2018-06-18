@@ -12,6 +12,7 @@ import {AdminRoutingModule} from "../admin/admin-routing.module";
 import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { ProdutosInicioComponent } from './produtos-inicio/produtos-inicio.component';
+import { UsuarioService } from './usuario.service';
 
 @NgModule({
   imports: [
@@ -29,6 +30,6 @@ import { ProdutosInicioComponent } from './produtos-inicio/produtos-inicio.compo
                  LoginComponent,
                  PublicoComponent,
                  ProdutosInicioComponent],
-  providers: []
+  providers: [UsuarioService]
 })
 export class PublicoModule { }

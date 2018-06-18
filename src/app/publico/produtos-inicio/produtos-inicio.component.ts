@@ -22,10 +22,10 @@ export class ProdutosInicioComponent implements OnInit {
         this.produtoService.getCategorias()
             .subscribe(categorias => this.categorias = categorias);
     }
-    // removerFiltroPorCategoria() {
-    //     this.filtroPorCategoria = null;
-    //     this.atualizarLista();
-    // }
+    removerFiltroPorCategoria() {
+        this.filtroPorCategoria = null;
+        this.atualizarLista();
+    }
 
     filtrarPorCategoria(categoria: number) {
         this.filtroPorCategoria = categoria;

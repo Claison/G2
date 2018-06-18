@@ -2,6 +2,9 @@
     <div class="col-sm-2">
         <h4>Categorias</h4>
         <ul>
+            <li>
+                <a href="javascript:void(0)" [class.filtro-ativo]="!filtroPorCategoria" (click)="removerFiltroPorCategoria()">Todas</a>
+            </li>
             <li *ngFor="let categoria of categorias">
                 <a href="javascript:void(0)" [class.filtro-ativo]="filtroPorCategoria === categoria" (click)="filtrarPorCategoria(categoria.id)">{{categoria.nome}}</a>
             </li>
